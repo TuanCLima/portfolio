@@ -257,36 +257,25 @@ section { padding: 104px 0; }
 .ol-ok { display: flex; align-items: center; gap: 5px; font-size: 9.5px; color: #2f8a57; }
 .ol-ok::before { content: "✓"; width: 13px; height: 13px; display: grid; place-items: center; border-radius: 50%; background: #e1f3e8; font-size: 8px; }
 
-/* Mock: ViX player */
-.player { width: 100%; max-width: 540px; border-radius: 14px; overflow: hidden; background: #000; box-shadow: 0 40px 80px -24px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.06); color: #fff; font-family: var(--sans); }
-.player-screen { aspect-ratio: 16 / 9; position: relative; background:
-  radial-gradient(240px 160px at 72% 40%, rgba(255,140,90,.55), transparent 70%),
-  radial-gradient(300px 200px at 30% 70%, rgba(150,40,90,.6), transparent 70%),
-  linear-gradient(120deg, #1a0a14, #3b1022 50%, #120609); }
-.player-screen::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.85), transparent 55%); }
-.ply-top { position: absolute; top: 12px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: center; z-index: 2; font-size: 10px; }
-.vix-logo { font-weight: 800; font-size: 15px; letter-spacing: -.02em; background: linear-gradient(95deg, #ff2d55, #ff7a45); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.ply-badges { display: flex; gap: 5px; }
-.ply-badges span { padding: 2px 6px; border-radius: 4px; background: rgba(255,255,255,.14); backdrop-filter: blur(6px); font-family: var(--mono); font-size: 9px; }
-.ply-title { position: absolute; left: 16px; bottom: 58px; z-index: 2; }
-.ply-title small { font-size: 9px; letter-spacing: .12em; color: #ffb39a; font-weight: 600; }
-.ply-title b { display: block; font-size: 22px; letter-spacing: -.02em; line-height: 1.05; margin-top: 3px; font-weight: 700; }
-.ply-cc { position: absolute; left: 50%; transform: translateX(-50%); bottom: 64px; z-index: 2; font-size: 10.5px; background: rgba(0,0,0,.6); padding: 3px 8px; border-radius: 3px; white-space: nowrap; }
-.ply-controls { position: absolute; left: 0; right: 0; bottom: 0; padding: 0 14px 12px; z-index: 2; }
-.ply-bar { height: 4px; border-radius: 2px; background: rgba(255,255,255,.22); position: relative; margin-bottom: 10px; }
-.ply-bar .buf { position: absolute; left: 0; top: 0; bottom: 0; width: 58%; background: rgba(255,255,255,.35); border-radius: 2px; }
-.ply-bar .pos { position: absolute; left: 0; top: 0; bottom: 0; width: 38%; background: linear-gradient(90deg, #ff2d55, #ff7a45); border-radius: 2px; }
-.ply-bar .pos::after { content: ""; position: absolute; right: -5px; top: -3px; width: 10px; height: 10px; border-radius: 50%; background: #fff; }
-.ply-bar .ad { position: absolute; top: 0; bottom: 0; width: 3px; background: #ffd34d; }
-.ply-row { display: flex; align-items: center; gap: 12px; font-size: 10px; }
-.ply-row svg { width: 15px; height: 15px; }
-.ply-row .sp { flex: 1; }
-.ply-row .time { font-family: var(--mono); opacity: .85; }
-.ply-strip { display: grid; grid-template-columns: repeat(3, 1fr); background: #0b0b0d; border-top: 1px solid rgba(255,255,255,.06); }
-.ply-strip div { padding: 10px 12px; font-size: 10px; color: rgba(255,255,255,.6); }
-.ply-strip div + div { border-left: 1px solid rgba(255,255,255,.06); }
-.ply-strip b { display: block; color: #fff; font-family: var(--mono); font-size: 11px; font-weight: 500; margin-top: 2px; }
-.ply-strip .ok { color: #6ee7a8; }
+/* ViX screenshot */
+.vix-stage { position: relative; width: 100%; max-width: 600px; margin-bottom: 24px; }
+.vix-shot { width: 100%; border-radius: 12px; overflow: hidden; background: #0d0e1a; box-shadow: 0 40px 80px -24px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.08); }
+.vix-chrome { height: 28px; display: flex; align-items: center; gap: 6px; padding: 0 12px; background: #1b1c2b; border-bottom: 1px solid rgba(255,255,255,.06); }
+.vix-chrome i { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,.18); }
+.vix-chrome span { margin: 0 auto; transform: translateX(-24px); font-family: var(--mono); font-size: 10.5px; color: rgba(255,255,255,.55); background: rgba(255,255,255,.06); padding: 2px 14px; border-radius: 6px; }
+.vix-shot img { width: 100%; }
+.vix-float {
+  position: absolute; left: -14px; bottom: -40px; width: 230px; padding: 12px 14px; border-radius: 12px; color: #fff; font-size: 11px;
+  background: rgba(14,10,20,.78); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.1); box-shadow: 0 20px 40px -12px rgba(0,0,0,.7);
+}
+.vf-bar { height: 4px; border-radius: 2px; background: rgba(255,255,255,.2); position: relative; margin-bottom: 10px; }
+.vf-bar .pos { position: absolute; inset: 0 58% 0 0; border-radius: 2px; background: linear-gradient(90deg, #ff2d55, #ff7a45); }
+.vf-bar .ad { position: absolute; top: 0; bottom: 0; width: 3px; background: #ffd34d; }
+.vf-row { display: flex; gap: 5px; flex-wrap: wrap; }
+.vf-row span { font-family: var(--mono); font-size: 9.5px; padding: 2px 6px; border-radius: 4px; background: rgba(255,255,255,.1); }
+.vf-row .ok { color: #6ee7a8; }
+.vf-foot { margin-top: 8px; color: rgba(255,255,255,.6); font-size: 10.5px; }
 
 /* Mock: Tellers editor */
 .editor { width: 100%; max-width: 540px; border-radius: 14px; overflow: hidden; background: #17162a; box-shadow: 0 40px 80px -24px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.07); color: #e9e7ff; font-family: var(--sans); font-size: 10px; }
@@ -464,7 +453,9 @@ footer nav { display: flex; gap: 20px; }
   .ol-main { border-right: 0; border-bottom: 1px solid #e6e8ee; }
   .ed-mid { grid-template-columns: 1fr; }
   .ed-prompt { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.07); }
-  .ply-strip div { padding: 8px; font-size: 9px; }
+  .vix-float { left: -4px; bottom: -58px; width: 168px; padding: 9px 10px; }
+  .vf-foot { display: none; }
+  .v-vix { padding-bottom: 76px; }
   .phones { gap: 8px; }
   .edu-item, .card { padding: 22px 20px; }
 }
@@ -621,30 +612,17 @@ footer nav { display: flex; gap: 20px; }
               <span class="note">Available in the US &amp; Latin America</span>
             </div>
           </div>
-          <div class="project-visual v-vix" aria-hidden="true">
-            <div class="player">
-              <div class="player-screen">
-                <div class="ply-top"><span class="vix-logo">ViX</span><div class="ply-badges"><span>HLS · ABR</span><span>1080p</span><span>DRM</span></div></div>
-                <div class="ply-title"><small>EXCLUSIVA VIX PREMIUM</small><b>La Herencia<br>del Silencio</b></div>
-                <div class="ply-cc">— Nadie conocía el testamento.</div>
-                <div class="ply-controls">
-                  <div class="ply-bar"><span class="buf"></span><span class="pos"></span><span class="ad" style="left:22%"></span><span class="ad" style="left:64%"></span><span class="ad" style="left:86%"></span></div>
-                  <div class="ply-row">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5ZM15.5 8.5a5 5 0 0 1 0 7"/></svg>
-                    <span class="time">18:42 / 48:10</span>
-                    <span class="sp"></span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 10.5a2 2 0 1 0 0 3M17 10.5a2 2 0 1 0 0 3"/></svg>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 16a5 5 0 0 1 5 5M2 12a9 9 0 0 1 9 9M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"/></svg>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
-                  </div>
-                </div>
-              </div>
-              <div class="ply-strip">
-                <div>Bitrate<b>6.2 Mbps</b></div>
-                <div>Next ad break<b>in 4:18</b></div>
-                <div>License<b class="ok">Widevine ✓</b></div>
-              </div>
+          <div class="project-visual v-vix">
+            <div class="vix-stage">
+            <div class="vix-shot">
+              <div class="vix-chrome" aria-hidden="true"><i></i><i></i><i></i><span>vix.com</span></div>
+              <img src="assets/vix/home.jpg" alt="ViX home page with rows of novelas and ViX Original series" loading="lazy" width="1400" height="875">
+            </div>
+            <div class="vix-float" aria-hidden="true">
+              <div class="vf-bar"><span class="pos"></span><span class="ad" style="left:30%"></span><span class="ad" style="left:72%"></span></div>
+              <div class="vf-row"><span>HLS · ABR</span><span>CC</span><span>Cast</span><span class="ok">DRM ✓</span></div>
+              <div class="vf-foot">Player package · 100% Jest coverage</div>
+            </div>
             </div>
           </div>
         </article>
@@ -901,7 +879,7 @@ footer nav { display: flex; gap: 20px; }
           <div class="card reveal">
             <h4>Languages</h4>
             <div class="lang"><div>Portuguese<div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div><span>Native</span></div>
-            <div class="lang"><div>English<div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div><span>Full professional</span></div>
+            <div class="lang"><div>English<div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div><span>Full professional</span></div>
             <div class="lang"><div>French<div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></div><span>Professional working</span></div>
           </div>
           <div class="card research reveal">
