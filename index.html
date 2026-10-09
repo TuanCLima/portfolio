@@ -121,6 +121,7 @@ a { color: inherit; text-decoration: none; }
 .btn-ghost { border-color: var(--line-strong); color: var(--ink); background: transparent; }
 .btn-ghost:hover { background: var(--surface); border-color: var(--ink-2); }
 .btn-sm { padding: 8px 14px; font-size: 14px; }
+.btn-meta { font-family: var(--mono); font-size: 11px; padding: 1px 6px; border-radius: 5px; background: var(--bg-alt); color: var(--muted); border: 1px solid var(--line); }
 
 /* ---------- Hero ---------- */
 .hero { padding: 88px 0 72px; position: relative; }
@@ -145,7 +146,9 @@ a { color: inherit; text-decoration: none; }
 .hero-lede { font-size: clamp(17px, 2vw, 20px); color: var(--ink-2); max-width: 600px; margin: 28px 0 0; line-height: 1.55; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
 .hero-meta { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 44px; font-size: 14px; color: var(--muted); }
-.hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
+.hero-meta span, .hero-meta a { display: inline-flex; align-items: center; gap: 8px; }
+.hero-meta a { color: var(--ink-2); text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 3px; }
+.hero-meta a:hover { color: var(--accent); text-decoration-color: currentColor; }
 .hero-meta svg { width: 15px; height: 15px; opacity: .8; }
 
 .hero-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 48px; align-items: center; }
@@ -475,6 +478,7 @@ footer nav { display: flex; gap: 20px; }
   <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
   <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></symbol>
 </svg>
 
@@ -509,9 +513,10 @@ footer nav { display: flex; gap: 20px; }
       <div class="hero-cta reveal">
         <a class="btn btn-primary" href="#work">See selected work
           <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <a class="btn btn-ghost" href="mailto:tuan7lima@gmail.com"><svg aria-hidden="true"><use href="#i-mail"/></svg>tuan7lima@gmail.com</a>
+        <a class="btn btn-ghost" href="assets/Tuan_Lima_CV.pdf" download="Tuan_Lima_CV.pdf"><svg aria-hidden="true"><use href="#i-download"/></svg>Download CV <span class="btn-meta">PDF</span></a>
       </div>
       <div class="hero-meta reveal">
+        <a href="mailto:tuan7lima@gmail.com"><svg aria-hidden="true"><use href="#i-mail"/></svg>tuan7lima@gmail.com</a>
         <span><svg aria-hidden="true"><use href="#i-pin"/></svg>São Paulo, Brazil</span>
         <span><svg aria-hidden="true"><use href="#i-clock"/></svg>Remote · UTC−3</span>
         <span><svg aria-hidden="true"><use href="#i-globe"/></svg>English · French · Portuguese</span>
@@ -901,8 +906,8 @@ footer nav { display: flex; gap: 20px; }
         <div class="contact-actions">
           <a class="btn btn-primary" href="mailto:tuan7lima@gmail.com"><svg aria-hidden="true"><use href="#i-mail"/></svg>tuan7lima@gmail.com</a>
           <button class="btn btn-ghost" type="button" id="copy-email"><svg aria-hidden="true"><use href="#i-copy"/></svg>Copy email</button>
+          <a class="btn btn-ghost" href="assets/Tuan_Lima_CV.pdf" download="Tuan_Lima_CV.pdf"><svg aria-hidden="true"><use href="#i-download"/></svg>Download CV</a>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/tuanlima" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-in"/></svg>LinkedIn</a>
-          <a class="btn btn-ghost" href="https://github.com/TuanCLima" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-gh"/></svg>GitHub</a>
           <span class="copy-toast" id="copy-toast" role="status" aria-live="polite"></span>
         </div>
       </div>
@@ -914,7 +919,6 @@ footer nav { display: flex; gap: 20px; }
   <div class="wrap">
     <span>© <span id="yr">2026</span> Tuan Candido Lima · São Paulo, Brazil</span>
     <nav aria-label="Elsewhere">
-      <a href="https://github.com/TuanCLima" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/tuanlima" target="_blank" rel="noopener">LinkedIn</a>
       <a href="#top">Back to top ↑</a>
     </nav>
